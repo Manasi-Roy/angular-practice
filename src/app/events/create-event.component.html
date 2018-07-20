@@ -1,0 +1,39 @@
+<div>
+  <form [formGroup]="eventForm" (ngSubmit)="saveEvent(eventForm.value)" novalidate>
+    <div class="form-group" [ngClass]="{'error': name?.invalid && name?.touched}">
+      <label for="event-name">Event Name: </label>
+      <input formControlName="name" id="event-name" type="text"/>
+      <em *ngIf="name?.invalid && name?.touched">Required</em>
+    </div>
+    <div class="form-group" [ngClass]="{'error': date?.invalid && date?.touched}">
+      <label for="date">Date: </label>
+      <input formControlName="date" id="date" type="text"/>
+      <em *ngIf="date?.invalid && date?.touched">Required</em>
+    </div>
+    <div class="form-group" [ngClass]="{'error': time?.invalid && time?.touched}">
+      <label for="time">Time: </label>
+      <input formControlName="time" id="time" type="text"/>
+      <em *ngIf="time?.invalid && time?.touched">Required</em>
+    </div>
+    <div formGroupName="location">
+      <div class="form-group" [ngClass]="{'error': location?.controls.address.invalid && address.touched}">
+        <label for="address">Address: </label>
+        <input formControlName="address" id="address" type="text"/>
+        <em *ngIf="address.invalid && address.touched">Required</em>
+      </div>
+      <div class="form-group" [ngClass]="{'error': city.invalid && city.touched}">
+        <label for="city">City: </label>
+        <input formControlName="city" id="city" type="text"/>
+        <em *ngIf="city.invalid && city.touched">Required</em>
+      </div>
+      <div class="form-group" [ngClass]="{'error': country.invalid && country.touched}">
+        <label for="country">Country: </label>
+        <input formControlName="country" id="country" type="text"/>
+        <em *ngIf="country.errors?.required && country.touched">Required</em>
+        <em *ngIf="country.value && country.errors?.pattern && country.touched">Must be a two-letter country code</em>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="eventForm.invalid">Save</button>
+    <button type="button" class="btn btn-default" (click)="cancel(eventForm)">Cancel</button>
+  </form>
+</div>
