@@ -34,6 +34,7 @@
     <div class="form-group">
       <label for="abstract">Abstract:</label>
       <textarea formControlName="abstract" id="abstract" rows=3 class="form-control" placeholder="abstract..."></textarea>
+<em *ngIf="abstract.invalid && abstract.dirty && abstract?.errors.restrictedWords">Restricted words found</em>
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
     <button type="button" class="btn btn-default">Cancel</button>

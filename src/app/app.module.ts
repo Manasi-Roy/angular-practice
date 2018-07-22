@@ -8,7 +8,8 @@ import { EventsListComponent } from './events/event-list.component';
 import { CreateEventComponent } from './events/create-event.component';
 import { CreateSessionComponent } from './events/create-session.component';
 import { EventService } from './events/event-service';
-import { appRoutes } from './route'
+import { appRoutes } from './route';
+import { SessionListComponent } from './events/session-list.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { appRoutes } from './route'
     AppComponent,
     EventsListComponent,
     CreateEventComponent,
-    CreateSessionComponent
+    CreateSessionComponent,
+    SessionListComponent
   ],
   providers: [ EventService ],
   bootstrap: [ AppComponent ]

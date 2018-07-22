@@ -1,4 +1,4 @@
-<div>
+<!--<div>
   <table>
     <thead>
     <tr>
@@ -10,13 +10,43 @@
     </thead>
     <tbody>
     <tr *ngFor="let event of events">
+      <div class="row">
+      <div class="col-md-6">
       <td>{{event.name}}</td>
       <td>{{event.date}} </td>
       <td>{{event.time}}</td>
       <td>{{event.location.address}}, {{event.location.city}}, {{event.location.country}}</td>
+      <hr>
+<session-list [sessions]="event?.sessions"></session-list>
+</div>
+</div>
     </tr>
     </tbody>
   </table>
 
   <a [routerLink]="['/events/new']">Create New Event</a>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <div *ngFor="let event of events">
+      <h1>{{event.name}}</h1>
+      <div>Date:{{event.date}}</div>
+      <div>Time:{{event.time}}</div>
+      <div>Address:{{event.location.address}}</div>
+  <div class="row">
+    <div class="col-md-2">
+      <h3 style="margin:0">Sessions</h3>
+    </div>
+      <div class="col-md-2">
+        <button (click)="addSession()">Add Session</button>
+      
+    </div>
+  </div>    
+<session-list *ngIf="!addMode" [sessions]="event?.sessions"></session-list>
+<create-session *ngIf="addMode"></create-session>
+<hr>
+    </div>
+  </div>
+  </div>
 </div>
