@@ -1,4 +1,5 @@
 import { Component,Input } from '@angular/core'
+import {DurationPipe} from '../shared/duration.pipe'
 
 @Component({
     selector:'session-list',

@@ -10,6 +10,7 @@ import { CreateSessionComponent } from './events/create-session.component';
 import { EventService } from './events/event-service';
 import { appRoutes } from './route';
 import { SessionListComponent } from './events/session-list.component';
+import {DurationPipe} from './shared/duration.pipe'
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { SessionListComponent } from './events/session-list.component';
     EventsListComponent,
     CreateEventComponent,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    DurationPipe
   ],
   providers: [ EventService ],
   bootstrap: [ AppComponent ]
