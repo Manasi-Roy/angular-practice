@@ -10,13 +10,16 @@ import { CreateSessionComponent } from './events/create-session.component';
 import { EventService } from './events/event-service';
 import { appRoutes } from './route';
 import { SessionListComponent } from './events/session-list.component';
-import {DurationPipe} from './shared/duration.pipe'
+import {DurationPipe} from './shared/duration.pipe';
+import {HttpClientModule} from '@angular/common/http'
+
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   declarations: [
     AppComponent,

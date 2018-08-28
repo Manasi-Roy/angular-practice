@@ -1,7 +1,11 @@
 import {Injectable} from '@angular/core'
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class EventService {
+  constructor(private http:HttpClient){
+    
+  }
   EVENTS = [
     
       {
@@ -322,7 +326,8 @@ export class EventService {
 
   getEvents() {
     return this.EVENTS
-  }
+  } 
+
   updateSession(event){
     let index=this.EVENTS.findIndex(x=>x.id==event.id)
     this.EVENTS[index]=event
