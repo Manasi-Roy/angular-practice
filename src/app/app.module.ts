@@ -8,6 +8,7 @@ import { EventsListComponent } from './events/event-list.component';
 import { CreateEventComponent } from './events/create-event.component';
 import { CreateSessionComponent } from './events/create-session.component';
 import { EventService } from './events/event-service';
+//import { NavbarComponent } from './nav/navbar.component';
 import { appRoutes } from './route';
 import { SessionListComponent } from './events/session-list.component';
 import {DurationPipe} from './shared/duration.pipe';
@@ -27,7 +28,8 @@ import {HttpClientModule} from '@angular/common/http'
     CreateEventComponent,
     CreateSessionComponent,
     SessionListComponent,
-    DurationPipe
+    DurationPipe,
+    //NavbarComponent
   ],
   providers: [ EventService ],
   bootstrap: [ AppComponent ]

@@ -3,7 +3,7 @@ import { EventService } from './event-service'
 
 @Component({
   selector: 'events-list',
-  templateUrl: './event-list.component.html',
+  templateUrl: `./event-list.component.html`,
   styles: [`
     th, td { font-size: 16px; padding:5px 10px;}
     a {cursor:pointer}
