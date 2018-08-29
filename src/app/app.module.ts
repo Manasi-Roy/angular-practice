@@ -11,14 +11,17 @@ import { EventService } from './events/event-service';
 //import { NavbarComponent } from './nav/navbar.component';
 import { appRoutes } from './route';
 import { SessionListComponent } from './events/session-list.component';
-import {DurationPipe} from './shared/duration.pipe'
+import {DurationPipe} from './shared/duration.pipe';
+import {HttpClientModule} from '@angular/common/http'
 import { UpvoteComponent } from './events/upvote.component';
+
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   declarations: [
     AppComponent,

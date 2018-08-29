@@ -31,10 +31,9 @@
   <div class="row">
     <div class="col-md-5">
       <div *ngFor="let event of events">
-      <h1>{{event.name | uppercase}}</h1>
-      <div>Date:{{event.date | date}}</div>
+      <h1>{{event.name}}</h1>
+      <div>Date:{{event.date}}</div>
       <div>Time:{{event.time}}</div>
-        <div>Price:{{event?.price | currency:'USD'}}</div>
       <div>Address:{{event.location.address}}</div>
   <div class="row">
     <div class="col-md-2">
@@ -42,11 +41,11 @@
     </div>
       <div class="col-md-2">
         <button (click)="addSession()">Add Session</button>
-
+      
     </div>
-  </div>
+  </div>    
 <session-list *ngIf="!addMode" [sessions]="event?.sessions"></session-list>
-<create-session *ngIf="addMode"></create-session>
+<create-session *ngIf="addMode" (saveNewSession)="saveNewSession($event)"></create-session>
 <hr>
     </div>
   </div>
