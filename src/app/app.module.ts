@@ -12,6 +12,7 @@ import { EventService } from './events/event-service';
 import { appRoutes } from './route';
 import { SessionListComponent } from './events/session-list.component';
 import {DurationPipe} from './shared/duration.pipe'
+import { UpvoteComponent } from './events/upvote.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import {DurationPipe} from './shared/duration.pipe'
     CreateSessionComponent,
     SessionListComponent,
     DurationPipe,
+    UpvoteComponent
     //NavbarComponent
   ],
   providers: [ EventService ],
